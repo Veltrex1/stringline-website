@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/assigned.html"
+        ],
+        "createdAt": "2026-10-26T00:40:18.452Z",
+        "reason": "Claude: unchosen decision-round sketch, rendered only as a skeleton on the decision page, never shipped"
+      }
+    ]
+  }
+}

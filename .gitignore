@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# design tooling scratch
+/.taste-skill/
+/.impeccable/review/
+/.impeccable/questions/
+/.impeccable/hook.cache.json
+/.impeccable/config.local.json

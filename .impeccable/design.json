@@ -1,0 +1,356 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-26T01:07:47+00:00",
+  "title": "Design System: Stringline",
+  "extensions": {
+    "colorMeta": {
+      "white": {
+        "role": "neutral",
+        "displayName": "Paper White",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(38% 0 0)",
+          "oklch(50% 0 0)",
+          "oklch(62% 0 0)",
+          "oklch(74% 0 0)",
+          "oklch(85% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "stone": {
+        "role": "neutral",
+        "displayName": "Pale Stone",
+        "canonical": "oklch(95.9% 0.006 84.6)",
+        "tonalRamp": [
+          "oklch(15% 0.006 84.6)",
+          "oklch(26% 0.006 84.6)",
+          "oklch(38% 0.006 84.6)",
+          "oklch(50% 0.006 84.6)",
+          "oklch(62% 0.006 84.6)",
+          "oklch(74% 0.006 84.6)",
+          "oklch(85% 0.006 84.6)",
+          "oklch(95% 0.006 84.6)"
+        ]
+      },
+      "stone-2": {
+        "role": "neutral",
+        "displayName": "Deep Stone",
+        "canonical": "oklch(91.7% 0.010 81.8)",
+        "tonalRamp": [
+          "oklch(15% 0.01 81.8)",
+          "oklch(26% 0.01 81.8)",
+          "oklch(38% 0.01 81.8)",
+          "oklch(50% 0.01 81.8)",
+          "oklch(62% 0.01 81.8)",
+          "oklch(74% 0.01 81.8)",
+          "oklch(85% 0.01 81.8)",
+          "oklch(95% 0.01 81.8)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Mortar Line",
+        "canonical": "oklch(87.1% 0.013 82.4)",
+        "tonalRamp": [
+          "oklch(15% 0.013 82.4)",
+          "oklch(26% 0.013 82.4)",
+          "oklch(38% 0.013 82.4)",
+          "oklch(50% 0.013 82.4)",
+          "oklch(62% 0.013 82.4)",
+          "oklch(74% 0.013 82.4)",
+          "oklch(85% 0.013 82.4)",
+          "oklch(95% 0.013 82.4)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "oklch(23.1% 0.004 264.5)",
+        "tonalRamp": [
+          "oklch(15% 0.004 264.5)",
+          "oklch(26% 0.004 264.5)",
+          "oklch(38% 0.004 264.5)",
+          "oklch(50% 0.004 264.5)",
+          "oklch(62% 0.004 264.5)",
+          "oklch(74% 0.004 264.5)",
+          "oklch(85% 0.004 264.5)",
+          "oklch(95% 0.004 264.5)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Weathered Graphite",
+        "canonical": "oklch(45.9% 0.008 255.5)",
+        "tonalRamp": [
+          "oklch(15% 0.008 255.5)",
+          "oklch(26% 0.008 255.5)",
+          "oklch(38% 0.008 255.5)",
+          "oklch(50% 0.008 255.5)",
+          "oklch(62% 0.008 255.5)",
+          "oklch(74% 0.008 255.5)",
+          "oklch(85% 0.008 255.5)",
+          "oklch(95% 0.008 255.5)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "String Orange",
+        "canonical": "oklch(55.3% 0.174 38.4)",
+        "tonalRamp": [
+          "oklch(15% 0.174 38.4)",
+          "oklch(26% 0.174 38.4)",
+          "oklch(38% 0.174 38.4)",
+          "oklch(50% 0.174 38.4)",
+          "oklch(62% 0.174 38.4)",
+          "oklch(74% 0.174 38.4)",
+          "oklch(85% 0.174 38.4)",
+          "oklch(95% 0.174 38.4)"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Fired Orange",
+        "canonical": "oklch(49.9% 0.155 37.8)",
+        "tonalRamp": [
+          "oklch(15% 0.155 37.8)",
+          "oklch(26% 0.155 37.8)",
+          "oklch(38% 0.155 37.8)",
+          "oklch(50% 0.155 37.8)",
+          "oklch(62% 0.155 37.8)",
+          "oklch(74% 0.155 37.8)",
+          "oklch(85% 0.155 37.8)",
+          "oklch(95% 0.155 37.8)"
+        ]
+      },
+      "accent-ink": {
+        "role": "primary",
+        "displayName": "Accent Ink",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(38% 0 0)",
+          "oklch(50% 0 0)",
+          "oklch(62% 0 0)",
+          "oklch(74% 0 0)",
+          "oklch(85% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "error": {
+        "role": "functional",
+        "displayName": "Brick Red",
+        "canonical": "oklch(50.1% 0.178 28.7)",
+        "tonalRamp": [
+          "oklch(15% 0.178 28.7)",
+          "oklch(26% 0.178 28.7)",
+          "oklch(38% 0.178 28.7)",
+          "oklch(50% 0.178 28.7)",
+          "oklch(62% 0.178 28.7)",
+          "oklch(74% 0.178 28.7)",
+          "oklch(85% 0.178 28.7)",
+          "oklch(95% 0.178 28.7)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only, set as separate balanced lines."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings in the left column."
+      },
+      "statement": {
+        "displayName": "Statement",
+        "purpose": "One standalone sentence given its own screen, max 34ch."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Step titles and the form's second heading."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Hero sentence, pricing and about bodies."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text; FAQ answers capped at 60ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Field labels, photo labels, fragment headers; at 400 for nav links and notes."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Timestamps and event lines inside product fragments, muted."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "The Stringline wordmark in the nav."
+      }
+    },
+    "shadows": [
+      {
+        "name": "grip-lift",
+        "value": "0 6px 20px rgb(0 0 0 / 0.22)",
+        "purpose": "The reveal grip only; the system is otherwise flat."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "The single curve for every transition, entrance and the reveal sweep."
+      },
+      {
+        "name": "dur-ui",
+        "value": "180ms",
+        "purpose": "Hover, press, border and colour state changes."
+      },
+      {
+        "name": "dur-reveal",
+        "value": "600ms",
+        "purpose": "Load and scroll entrances (rise 12 to 18px plus fade)."
+      },
+      {
+        "name": "reveal-sweep",
+        "value": "1.6s after 0.6s delay, ease-out",
+        "purpose": "One-time handle sweep from the yard today toward the concept on load; skipped under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "560px"
+      },
+      {
+        "name": "reveal-portrait",
+        "value": "700px"
+      },
+      {
+        "name": "nav-collapse",
+        "value": "760px"
+      },
+      {
+        "name": "single-column",
+        "value": "900px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one action shape: square, String Orange, white type.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Join the pilot list</a>",
+      "css": ".ds-btn { display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:0 26px; background:var(--accent); color:var(--accent-ink); font-family: var(--font); font-size:var(--t-body); font-weight:650; text-decoration:none; border:0; border-radius:0; cursor:pointer; transition: background-color var(--dur-ui) var(--ease-out), transform var(--dur-ui) var(--ease-out); } .ds-btn:hover { background:var(--accent-hover); } .ds-btn:active { transform:scale(0.97); } .ds-btn:focus-visible { outline:2px solid var(--ink); outline-offset:3px; }"
+    },
+    {
+      "name": "Small Button",
+      "kind": "button",
+      "refersTo": "button-small",
+      "description": "Nav-size variant of the primary button.",
+      "html": "<a class=\"ds-btn-sm\" href=\"#\">Join the pilot</a>",
+      "css": ".ds-btn-sm { display:inline-flex; align-items:center; min-height:44px; padding:0 18px; background:var(--accent); color:var(--accent-ink); font-family: var(--font); font-size:var(--t-small); font-weight:650; text-decoration:none; border-radius:0; transition: background-color var(--dur-ui) var(--ease-out), transform var(--dur-ui) var(--ease-out); } .ds-btn-sm:hover { background:var(--accent-hover); } .ds-btn-sm:active { transform:scale(0.97); } .ds-btn-sm:focus-visible { outline:2px solid var(--ink); outline-offset:3px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "field-input",
+      "description": "Square white field with a hairline border and label above.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-co\">Company</label><input id=\"ds-co\" placeholder=\"Your company\"></div>",
+      "css": ".ds-field { display:grid; gap:8px; font-family: var(--font); color:var(--ink); } .ds-field label { font-size:var(--t-small); font-weight:600; } .ds-field input { height:52px; padding:0 14px; background:var(--white); border:1px solid var(--line); border-radius:0; font:inherit; font-size:1rem; transition:border-color var(--dur-ui) var(--ease-out); } .ds-field input:hover { border-color:#b9b3a8; } .ds-field input:focus-visible { outline:2px solid var(--accent); outline-offset:-1px; border-color:var(--accent); }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "wordmark",
+      "description": "Wordmark, three muted links, small primary button.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-wordmark\" href=\"#\">Stringline</a><nav><a href=\"#\">How it works</a><a href=\"#\">Pricing</a><a href=\"#\">FAQ</a></nav><a class=\"ds-nav-btn\" href=\"#\">Join the pilot</a></header>",
+      "css": ".ds-nav { display:flex; align-items:center; justify-content:space-between; gap:24px; padding:22px 0; font-family: var(--font); background:var(--white); color:var(--ink); } .ds-wordmark { font-weight:750; font-size:1.4rem; letter-spacing:-0.035em; text-decoration:none; color:inherit; } .ds-nav nav { display:flex; gap:36px; font-size:var(--t-small); } .ds-nav nav a { color:var(--muted); text-decoration:none; transition:color var(--dur-ui) var(--ease-out); } .ds-nav nav a:hover { color:var(--ink); } .ds-nav-btn { display:inline-flex; align-items:center; min-height:44px; padding:0 18px; background:var(--accent); color:var(--accent-ink); font-size:var(--t-small); font-weight:650; text-decoration:none; } .ds-nav-btn:hover { background:var(--accent-hover); }"
+    },
+    {
+      "name": "Reveal Grip and Labels",
+      "kind": "custom",
+      "refersTo": "range-chip",
+      "description": "Signature before/after reveal: photo labels, the white range chip, the 3px divider and the orange grip.",
+      "html": "<div class=\"ds-reveal\"><span class=\"ds-reveal-label\">Concept</span><div class=\"ds-reveal-range\"><strong>$9,000–$13,500</strong><span>Patio, 300 sq ft · example range</span></div><span class=\"ds-reveal-line\"></span><span class=\"ds-reveal-grip\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 22 22\" fill=\"none\" aria-hidden=\"true\"><path d=\"M8 6 3 11l5 5M14 6l5 5-5 5\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></div>",
+      "css": ".ds-reveal { position:relative; aspect-ratio:16/9; width:100%; background:var(--stone-2); font-family: var(--font); overflow:hidden; } .ds-reveal-label { position:absolute; top:20px; left:20px; padding:7px 12px; background:rgb(28 29 31 / 0.72); color:var(--white); font-size:var(--t-small); font-weight:600; } .ds-reveal-range { position:absolute; left:20px; top:68px; display:grid; gap:2px; padding:14px 18px; background:var(--white); color:var(--ink); } .ds-reveal-range strong { font-size:1.6rem; font-weight:700; letter-spacing:-0.02em; line-height:1.1; } .ds-reveal-range span { font-size:var(--t-small); color:var(--muted); } .ds-reveal-line { position:absolute; top:0; bottom:0; left:70%; width:3px; background:var(--white); transform:translateX(-50%); } .ds-reveal-grip { position:absolute; top:50%; left:70%; display:grid; place-items:center; width:52px; height:52px; border-radius:50%; background:var(--accent); color:var(--accent-ink); transform:translate(-50%,-50%); box-shadow:0 6px 20px rgb(0 0 0 / 0.22); transition:transform var(--dur-ui) var(--ease-out); } .ds-reveal:hover .ds-reveal-grip { transform:translate(-50%,-50%) scale(1.08); }"
+    },
+    {
+      "name": "Fragment Panel: Text Thread",
+      "kind": "card",
+      "refersTo": "fragment-panel",
+      "description": "Pale stone panel holding a labeled example of Stringline's output.",
+      "html": "<div class=\"ds-panel\"><div class=\"ds-frag\"><p class=\"ds-frag-meta\">Text messages · Dana R. · Example</p><p class=\"ds-frag-time\">New web form · Tue 10:47 PM</p><p class=\"ds-bubble ds-bubble-out\">Hi Dana, thanks for reaching out about a patio. A few quick questions first?</p><p class=\"ds-bubble ds-bubble-in\">Sure, go ahead!</p></div></div>",
+      "css": ".ds-panel { background:var(--stone); padding:var(--panel, 40px); display:grid; place-items:center; font-family: var(--font); color:var(--ink); } .ds-frag { width:min(100%,440px); display:grid; gap:12px; font-size:var(--t-small); line-height:1.45; } .ds-frag p { margin:0; } .ds-frag-meta { font-weight:600; } .ds-frag-time { font-size:0.8125rem; color:var(--muted); } .ds-bubble { max-width:86%; padding:10px 14px; border-radius:16px; } .ds-bubble-out { justify-self:start; background:var(--white); border-bottom-left-radius:4px; } .ds-bubble-in { justify-self:end; background:var(--ink); color:var(--white); border-bottom-right-radius:4px; }"
+    },
+    {
+      "name": "FAQ Row",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "Disclosure row between hairlines with a rotating stroked chevron.",
+      "html": "<details class=\"ds-faq\" open><summary><span>Do homeowners know it's automated?</span><svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M4 7l6 6 6-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></summary><p>Yes. The assistant discloses recording and never claims to be human.</p></details>",
+      "css": ".ds-faq { border-top:1px solid var(--line); border-bottom:1px solid var(--line); font-family: var(--font); color:var(--ink); } .ds-faq summary { list-style:none; display:flex; justify-content:space-between; align-items:center; gap:24px; padding:22px 0; font-size:1.125rem; font-weight:600; cursor:pointer; transition:color var(--dur-ui) var(--ease-out); } .ds-faq summary::-webkit-details-marker { display:none; } .ds-faq summary:hover { color:var(--accent-hover); } .ds-faq summary:focus-visible { outline:2px solid var(--accent); outline-offset:3px; } .ds-faq svg { flex:none; transition:transform var(--dur-ui) var(--ease-out); } .ds-faq[open] svg { transform:rotate(180deg); } .ds-faq p { margin:0; padding-bottom:22px; max-width:60ch; color:var(--muted); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Project Portfolio",
+    "overview": "**Creative North Star: \"The Project Portfolio\"**\n\nStringline looks like a top contractor's portfolio, not a software site. White and pale stone grounds, graphite type set tight and heavy in one grotesk, and large square-cornered photographs that carry nearly all the colour on the page. A single string-orange accent marks what you can act on and what Stringline itself produces; everything else stays neutral.\n\nDensity is low and deliberate. Each screen holds one idea and, where there is an image, one dominant image. Sections are separated by large vertical air, not by rules, cards or tinted bands; the one tinted band is the stone join section. Product evidence appears as small, true-to-life fragments (a text thread, a calendar, a consult brief) set on stone panels, each labeled as an example.\n\nMotion is short and finite: rises and fades on entrance, one sweep of the reveal handle on load, nothing looping. With reduced motion, everything is static and visible.",
+    "keyCharacteristics": [
+      "Neutral grounds (white, stone); colour comes from photographs.",
+      "One accent, used on actions, the reveal handle, focus, and Stringline's own output inside fragments.",
+      "One typeface (Schibsted Grotesk) across every role, heavy and tightly tracked at display sizes.",
+      "Square corners on every surface, photo and control; rounding only where a real-world object is round (message bubbles, the drag grip).",
+      "Flat: depth from photographs and tone, one soft shadow on the grip only.",
+      "Short, one-shot motion on a single ease-out curve."
+    ],
+    "rules": [
+      {
+        "name": "The Photographs Carry the Colour Rule",
+        "body": "Grounds are white or pale stone; saturated colour arrives through photography. No coloured section fields, gradients or tinted cards.",
+        "section": "colors"
+      },
+      {
+        "name": "The One String Rule",
+        "body": "String Orange is the only hue in the interface. It marks action (buttons, focus, the grip) and Stringline's own output inside an example fragment, and nothing decorative.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Every role uses Schibsted Grotesk. Hierarchy comes from weight, size and tracking, never from a second face.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Page Rule",
+        "body": "Surfaces, panels, chips and buttons carry no shadow. If something needs to separate, change its ground (white on stone, stone on white) or draw a 1px Mortar Line.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Cut Stone Rule",
+        "body": "Interface surfaces are square-cornered. Rounding is reserved for depictions of objects that are round in life (a message bubble, a grip), never for a container or control.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** keep grounds white or pale stone and let photographs supply the colour.",
+      "**Do** reserve String Orange for actions, focus, the reveal grip and Stringline's own output inside an example fragment.",
+      "**Do** use square corners on every container, photo and control.",
+      "**Do** lay sections out as one asymmetric two-column grid (5fr : 6fr), headline left, separated by the section step rather than dividers.",
+      "**Do** label every sample figure, render or name as an example or concept on the surface itself.",
+      "**Do** keep motion one-shot: rises of 12 to 18px and fades on the `cubic-bezier(0.22, 1, 0.36, 1)` curve, 180ms for UI and 600ms for entrances, all disabled under reduced motion."
+    ],
+    "donts": [
+      "**Don't** add coloured section fields, gradients or tinted cards; the stone join band is the only tinted ground.",
+      "**Don't** round containers, buttons, inputs or photographs.",
+      "**Don't** add shadows to panels, chips or buttons; the grip is the only lifted object.",
+      "**Don't** introduce a second typeface or a second accent hue.",
+      "**Don't** use cards, icon rows or dashboard screenshots to explain the product; show its output as a labeled fragment or a photograph."
+    ]
+  }
+}
