@@ -11,15 +11,15 @@ export const nav = {
     { href: "#pricing", label: "Pricing" },
     { href: "#faq", label: "FAQ" },
   ],
-  cta: "Join the pilot",
+  cta: "Apply",
 };
 
 export const hero = {
   title: ["Every lead answered.", "Every consult booked."],
   lede:
     "Stringline answers your calls, texts and web forms in under a minute, books the consult on your calendar, and shows the homeowner a concept of their own yard before you get there.",
-  cta: "Join the pilot list",
-  note: "Spring 2027 pilot, starting in Indiana",
+  cta: "Apply for the pilot",
+  note: "Pilot open by application · limited spots",
   reveal: {
     label: "Drag to compare the yard today with the concept",
     before: "Today",
@@ -65,15 +65,15 @@ export const about = {
 };
 
 export const join = {
-  heading: "Join the spring pilot",
+  heading: "Apply for the pilot",
   lede:
-    "Pilots go live in Indiana in spring 2027. Contractors anywhere in the US can join the list, and we’ll reach out as we expand.",
+    "We work with a small number of crews at a time, starting in Indiana. Tell us about your business, and if it’s a fit, we’ll reach out to get you set up.",
   emailLabel: "Work email",
   emailPlaceholder: "you@company.com",
   continue: "Continue",
-  formHeading: "A few details about your crew",
-  submit: "Join the pilot list",
-  success: "You’re on the list. We’ll be in touch before spring.",
+  formHeading: "Tell us about your crew",
+  submit: "Submit application",
+  success: "We review every application ourselves and will reach out if your crew is a fit.",
   services: ["Patios", "Walkways", "Retaining walls", "Fire features", "Outdoor kitchens", "Other"],
   leads: ["Under 10", "10–25", "26–50", "51–100", "Over 100"],
   calendars: ["Google Calendar", "Microsoft 365 / Outlook", "Other", "None yet"],
@@ -99,8 +99,8 @@ export const faq = {
       a: "Our team reviews every concept and range before a homeowner sees it. Ranges come from your own price book and are never a single number.",
     },
     {
-      q: "When does the pilot start?",
-      a: "Three to five crews go live by April 1, 2027, starting in Indiana, ahead of the spring rush.",
+      q: "How do I get into the pilot?",
+      a: "Apply above. We take on a small number of crews at a time, starting in Indiana, and review every application ourselves. Crews anywhere in the US can apply.",
     },
   ],
 };

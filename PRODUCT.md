@@ -47,6 +47,7 @@ The full chain in one flow, billed per result: instant answer, qualification, re
 - Voice: a peer from the trade. Plain, direct, jobsite language from someone who has done the work. No AI hype.
 - Public face: Aidan King, founder, 20, four years working in hardscaping. Trevor is not named on the site.
 - Nothing visual is fixed: the earlier logo, palette and site design may be replaced.
+- Pilot framing (user, Oct 26, 2026): never put a public date on the pilot. Present it as open now, by application only, with limited spots. Calls to action say "Apply", not "join the waitlist". Do not claim crews are already live or name any.
 - Standing preference (user, Oct 26, 2026): the familiar end of the spectrum, closer to a paver idea book or a field-service software site than to an experimental world. Neutral grounds; colour used only as accents, no loud or saturated fields.
 
 ## Evidence on Hand

@@ -593,6 +593,7 @@ main > section,
 .join__row input {
   flex: 1;
   min-width: 0;
+  height: 60px;
 }
 .join__more {
   display: grid;

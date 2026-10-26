@@ -37,7 +37,7 @@ export function Join() {
     <section className="join" id="join" aria-labelledby="join-title">
       <div className="join__intro">
         <h2 id="join-title" className="h2">
-          {state.ok ? "You’re on the list." : join.heading}
+          {state.ok ? "Application received." : join.heading}
         </h2>
         <p>{state.ok ? join.success : join.lede}</p>
       </div>
