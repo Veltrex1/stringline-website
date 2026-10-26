@@ -178,6 +178,9 @@ main > section,
   padding-block: 22px;
 }
 .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-weight: 750;
   font-size: 1.4rem;
   letter-spacing: -0.035em;
@@ -772,10 +775,18 @@ details[open] .faq__icon {
   border-top: 1px solid var(--line);
 }
 .footer__name {
+  display: flex;
+  align-items: center;
+  gap: 0.12em;
   font-size: clamp(3rem, 12vw, 10rem);
   font-weight: 750;
   letter-spacing: -0.05em;
   line-height: 0.9;
+}
+.footer__name .mark {
+  width: 0.9em;
+  height: 0.9em;
+  flex: none;
 }
 .footer__base {
   display: flex;

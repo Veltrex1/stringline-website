@@ -236,8 +236,11 @@ Solid, square, confident. One shape in three sizes.
 - **Checkboxes:** native, 20px, tinted with String Orange.
 - **Error:** Brick Red message at label size and 600 weight below the field.
 
+### Logo
+The mark (B3, chosen Oct 26, 2026) is two graphite stakes angled 4° outward with the string tied off at each one: a String Orange band wraps each stake and the orange line runs between the ties. It sits left of the wordmark at about 1.25× the cap height, 10px gap. Reversed on Graphite it uses chalk stakes and a brighter orange (#ea5a1f). The favicon and app icon set the reversed mark in a Graphite rounded square (`src/app/icon.svg`). Source files: `src/components/Mark.tsx`, `public/stringline-mark.svg`.
+
 ### Navigation
-Plain: wordmark left (750, tight), three muted links in label size with 36px gaps, a small primary button right. Links go from Weathered Graphite to Graphite on hover. No background, no border, no sticky bar.
+Plain: mark plus wordmark left (750, tight), three muted links in label size with 36px gaps, a small primary button right. Links go from Weathered Graphite to Graphite on hover. No background, no border, no sticky bar.
 
 ### Before / After Reveal (signature)
 A full-width, square-cornered photograph pair. The concept is clipped over the yard today; a 3px white divider and a 52px circular String Orange grip with a chevron pair mark the split. On load the grip sweeps once (1.6s, ease-out) and settles toward the concept side; dragging or keyboard input takes over. Hover scales the grip 1.08, press 0.96; keyboard focus draws a 3px white ring. Photo labels are white on 72% Graphite, square; the range chip is a white square block with a bold figure and muted notes, and fades out when the concept is mostly hidden.

@@ -1,4 +1,5 @@
 import { Join } from "@/components/Join";
+import { Mark } from "@/components/Mark";
 import { BriefVisual, CalendarVisual, ThreadVisual } from "@/components/StepVisuals";
 import { YardReveal } from "@/components/YardReveal";
 import { about, faq, footer, hero, moment, nav, pricing, steps } from "@/content";
@@ -10,6 +11,7 @@ export default function Home() {
     <>
       <header className="nav">
         <a href="#top" className="wordmark">
+          <Mark size={30} />
           Stringline
         </a>
         <nav aria-label="Main">
@@ -119,7 +121,10 @@ export default function Home() {
       </main>
 
       <footer className="footer">
-        <p className="footer__name">Stringline</p>
+        <p className="footer__name">
+          <Mark size={120} />
+          Stringline
+        </p>
         <div className="footer__base">
           <span>{footer.copyright}</span>
           <span>{footer.line}</span>
