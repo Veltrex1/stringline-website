@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ApplyPage() {
   return (
     <>
-      <SiteHeader showCta={false} />
+      <SiteHeader showCta={false} showLinks={false} />
       <main className="apply">
         <aside className="apply__intro">
           <h1 className="h2">{apply.title}</h1>

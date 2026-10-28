@@ -12,6 +12,10 @@ colors:
   accent-hover: "#a8380f"
   accent-ink: "#ffffff"
   error: "#b3261e"
+  error-tint: "#fbefee"
+  field-line: "#8a857c"
+  field-line-hover: "#5f5b55"
+  placeholder: "#6b6e72"
 typography:
   display:
     fontFamily: "Schibsted Grotesk, Helvetica Neue, Arial, sans-serif"
@@ -62,6 +66,28 @@ typography:
     fontSize: "1.4rem"
     fontWeight: 750
     letterSpacing: "-0.035em"
+  display-phone:
+    fontFamily: "Schibsted Grotesk, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(1.75rem, 7.4vw, 3.6rem)"
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: "-0.035em"
+  control:
+    fontFamily: "Schibsted Grotesk, Helvetica Neue, Arial, sans-serif"
+    fontSize: "1rem"
+    fontWeight: 400
+    lineHeight: 1.5
+  micro:
+    fontFamily: "Schibsted Grotesk, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.75rem"
+    fontWeight: 600
+    lineHeight: 1.3
+  footer-wordmark:
+    fontFamily: "Schibsted Grotesk, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(2.5rem, 12vw, 10rem)"
+    fontWeight: 750
+    lineHeight: 0.9
+    letterSpacing: "-0.05em"
 rounded:
   none: "0px"
   bubble: "16px"

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useRef, useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { submitApplication } from "@/app/apply/actions";
 import {
   CREW_SIZES,
@@ -45,6 +45,36 @@ const LABELS: Record<Field, string> = {
 
 const REQUIRED: Field[] = ["name", "role", "email", "company", "state", "services", "leadsPerMonth"];
 
+// Answers are kept in this browser tab while someone applies, so a refresh or an interruption on
+// the job doesn't wipe them. Cleared once the application is sent.
+const DRAFT_KEY = "stringline-application-draft";
+
+function readDraft(): { data: Application; step: number } | null {
+  try {
+    const raw = sessionStorage.getItem(DRAFT_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    return { data: { ...EMPTY_APPLICATION, ...parsed.data }, step: Math.min(Number(parsed.step) || 0, STEPS.length - 1) };
+  } catch {
+    return null;
+  }
+}
+
+function writeDraft(data: Application, step: number) {
+  try {
+    sessionStorage.setItem(DRAFT_KEY, JSON.stringify({ data, step }));
+  } catch {}
+}
+
+function clearDraft() {
+  try {
+    sessionStorage.removeItem(DRAFT_KEY);
+  } catch {}
+}
+
+const hasAnswers = (a: Application) =>
+  Object.values(a).some((v) => (Array.isArray(v) ? v.length > 0 : v !== ""));
+
 export function ApplyForm() {
   const router = useRouter();
   const [data, setData] = useState<Application>(EMPTY_APPLICATION);
@@ -52,8 +82,40 @@ export function ApplyForm() {
   const [errors, setErrors] = useState<Errors>({});
   const [formError, setFormError] = useState("");
   const [pending, startTransition] = useTransition();
+  const [restored, setRestored] = useState(false);
+  const [announce, setAnnounce] = useState("");
+  const loaded = useRef(false);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const last = step === STEPS.length - 1;
+
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => {
+      const draft = readDraft();
+      loaded.current = true;
+      if (draft && hasAnswers(draft.data)) {
+        setData(draft.data);
+        setStep(draft.step);
+        setRestored(true);
+      }
+    });
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  useEffect(() => {
+    if (loaded.current && hasAnswers(data)) writeDraft(data, step);
+  }, [data, step]);
+
+  function startOver() {
+    clearDraft();
+    setData(EMPTY_APPLICATION);
+    setRestored(false);
+    goTo(0);
+  }
+
+  function announceErrors(errs: Errors) {
+    const n = Object.keys(errs).length;
+    setAnnounce(n ? `${n === 1 ? "One answer needs" : `${n} answers need`} another look.` : "");
+  }
 
   const set = <K extends Field>(k: K, v: Application[K]) => {
     setData((d) => ({ ...d, [k]: v }));
@@ -80,6 +142,7 @@ export function ApplyForm() {
   function next() {
     const errs = validateFields(data, STEPS[step].fields);
     setErrors(errs);
+    announceErrors(errs);
     if (Object.keys(errs).length) return focusFirstError(errs);
     goTo(step + 1);
   }
@@ -90,6 +153,7 @@ export function ApplyForm() {
       const bad = STEPS.findIndex((s) => s.fields.some((f) => errs[f]));
       setStep(bad);
       setErrors(errs);
+      announceErrors(errs);
       focusFirstError(errs);
       return;
     }
@@ -97,6 +161,7 @@ export function ApplyForm() {
     startTransition(async () => {
       const res = await submitApplication(data);
       if (res.ok) {
+        clearDraft();
         router.push("/apply/thanks");
         return;
       }
@@ -111,7 +176,7 @@ export function ApplyForm() {
 
   const err = (f: Field) =>
     errors[f] ? (
-      <p id={`e-${f}`} className="error" role="alert">
+      <p id={`e-${f}`} className="error">
         {errors[f]}
       </p>
     ) : null;
@@ -162,7 +227,15 @@ export function ApplyForm() {
   );
 
   const choices = (f: "role" | "crewSize" | "projectSize" | "leadsPerMonth" | "whoAnswers", options: readonly string[]) => (
-    <fieldset className="field" id={`f-${f}`} tabIndex={-1} aria-describedby={describedBy(f)}>
+    <fieldset
+      className="field"
+      id={`f-${f}`}
+      tabIndex={-1}
+      role="radiogroup"
+      aria-required={REQUIRED.includes(f) || undefined}
+      aria-invalid={errors[f] ? true : undefined}
+      aria-describedby={describedBy(f)}
+    >
       <legend>{label(f)}</legend>
       <div className="chips">
         {options.map((o) => (
@@ -177,7 +250,7 @@ export function ApplyForm() {
   );
 
   const multi = (f: ListField, options: readonly string[], hint: string) => (
-    <fieldset className="field" id={`f-${f}`} tabIndex={-1} aria-describedby={describedBy(f, true)}>
+    <fieldset className="field" id={`f-${f}`} tabIndex={-1} aria-invalid={errors[f] ? true : undefined} aria-describedby={describedBy(f, true)}>
       <legend>{label(f)}</legend>
       <p id={`h-${f}`} className="hint">
         {hint}
@@ -202,7 +275,15 @@ export function ApplyForm() {
 
   return (
     <div className="apply-form">
-      <div className="progress" aria-label={`Step ${step + 1} of ${STEPS.length}`}>
+      {restored && (
+        <p className="draft-note" role="status">
+          {apply.draftRestored}{" "}
+          <button type="button" className="link-btn" onClick={startOver}>
+            {apply.startOver}
+          </button>
+        </p>
+      )}
+      <div className="progress" role="group" aria-label={`Progress: step ${step + 1} of ${STEPS.length}`}>
         <div className="progress__line">
           <span style={{ transform: `scaleX(${(step + 1) / STEPS.length})` }} />
         </div>
@@ -253,13 +334,18 @@ export function ApplyForm() {
               {multi("services", SERVICES, "Pick all that apply.")}
               {choices("projectSize", PROJECT_SIZES)}
               {choices("leadsPerMonth", LEADS_PER_MONTH)}
+            </>
+          )}
+
+          {step === 3 && (
+            <>
               {multi("leadSources", LEAD_SOURCES, "Pick all that apply.")}
               {choices("whoAnswers", WHO_ANSWERS)}
               {multi("whatSlips", WHAT_SLIPS, "Pick all that apply.")}
             </>
           )}
 
-          {step === 3 && (
+          {step === 4 && (
             <>
               <div className="field">
                 <label htmlFor="f-problem">{label("problem")}</label>
@@ -283,7 +369,7 @@ export function ApplyForm() {
                 <h3 id="review-title" className="review__title">
                   {apply.reviewHeading}
                 </h3>
-                {STEPS.slice(0, 3).map((s, i) => (
+                {STEPS.slice(0, STEPS.length - 1).map((s, i) => (
                   <div key={s.title} className="review__group">
                     <div className="review__head">
                       <span>{s.title}</span>
@@ -302,16 +388,17 @@ export function ApplyForm() {
                   </div>
                 ))}
               </section>
-              <p className="hint">{apply.consent}</p>
+              <p className="hint">
+                {apply.free} {apply.consent}
+              </p>
             </>
           )}
         </div>
 
-        {formError && (
-          <p className="error form-error" role="alert">
-            {formError}
-          </p>
-        )}
+        <div className="sr-only" aria-live="assertive">
+          {announce}
+        </div>
+        <div aria-live="polite">{formError && <p className="error form-error">{formError}</p>}</div>
 
         <div className="apply-form__nav">
           {step > 0 ? (

@@ -93,7 +93,8 @@ export type Errors = Partial<Record<Field, string>>;
 export const STEPS: { title: string; fields: Field[] }[] = [
   { title: "You", fields: ["name", "role", "email", "phone"] },
   { title: "Your business", fields: ["company", "city", "state", "crewSize"] },
-  { title: "Your leads", fields: ["services", "projectSize", "leadsPerMonth", "leadSources", "whoAnswers", "whatSlips"] },
+  { title: "Your work", fields: ["services", "projectSize", "leadsPerMonth"] },
+  { title: "Your leads today", fields: ["leadSources", "whoAnswers", "whatSlips"] },
   { title: "Anything else", fields: ["problem"] },
 ];
 

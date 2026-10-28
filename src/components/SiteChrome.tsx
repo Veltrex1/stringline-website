@@ -2,22 +2,25 @@ import Link from "next/link";
 import { footer, nav } from "@/content";
 import { Mark } from "./Mark";
 
-export function SiteHeader({ showCta = true }: { showCta?: boolean }) {
+// On the application, the section links are hidden so a click can't pull someone out of the form.
+export function SiteHeader({ showCta = true, showLinks = true }: { showCta?: boolean; showLinks?: boolean }) {
   return (
     <header className="nav">
       <Link href="/" className="wordmark">
         <Mark size={30} />
         Stringline
       </Link>
-      <nav aria-label="Main">
-        <ul className="nav__links">
-          {nav.links.map((l) => (
-            <li key={l.href}>
-              <Link href={l.href}>{l.label}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      {showLinks && (
+        <nav aria-label="Main">
+          <ul className="nav__links">
+            {nav.links.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href}>{l.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
       {showCta ? (
         <Link className="btn btn--small" href="/apply">
           {nav.cta}
@@ -38,8 +41,15 @@ export function SiteFooter() {
       </p>
       <div className="footer__base">
         <span>{footer.copyright}</span>
-        <span>{footer.line}</span>
+        <ul className="footer__links">
+          {footer.links.map((l) => (
+            <li key={l.href}>
+              <Link href={l.href}>{l.label}</Link>
+            </li>
+          ))}
+        </ul>
       </div>
+      <p className="footer__privacy">{footer.privacy}</p>
     </footer>
   );
 }
