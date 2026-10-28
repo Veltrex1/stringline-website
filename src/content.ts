@@ -7,9 +7,9 @@ export const images = {
 
 export const nav = {
   links: [
-    { href: "#how", label: "How it works" },
-    { href: "#pricing", label: "Pricing" },
-    { href: "#faq", label: "FAQ" },
+    { href: "/#how", label: "How it works" },
+    { href: "/#pricing", label: "Pricing" },
+    { href: "/#faq", label: "FAQ" },
   ],
   cta: "Apply",
 };
@@ -64,19 +64,42 @@ export const about = {
     "Aidan King is 20 and has spent four years working in hardscaping. He started Stringline so the office side of the trade keeps up with the work in the field: every lead answered, every consult on the calendar, every estimator prepared.",
 };
 
-export const join = {
+export const applyCta = {
   heading: "Apply for the pilot",
   lede:
     "We work with a small number of crews at a time, starting in Indiana. Tell us about your business, and if it’s a fit, we’ll reach out to get you set up.",
-  emailLabel: "Work email",
-  emailPlaceholder: "you@company.com",
+  cta: "Start your application",
+  note: "Four short steps, about 3 minutes.",
+};
+
+export const apply = {
+  title: "Apply for the pilot",
+  lede:
+    "We take on a small number of crews at a time and read every application ourselves. Not every crew is a fit yet, and that’s fine. Tell us how your business runs today.",
+  nextHeading: "What happens next",
+  next: [
+    "We review your application, usually within a few business days.",
+    "If it looks like a fit, we reach out for a short call about your leads and calendar.",
+    "We set Stringline up with your service area, price book and calendar.",
+  ],
+  back: "Back",
   continue: "Continue",
-  formHeading: "Tell us about your crew",
   submit: "Submit application",
-  success: "We review every application ourselves and will reach out if your crew is a fit.",
-  services: ["Patios", "Walkways", "Retaining walls", "Fire features", "Outdoor kitchens", "Other"],
-  leads: ["Under 10", "10–25", "26–50", "51–100", "Over 100"],
-  calendars: ["Google Calendar", "Microsoft 365 / Outlook", "Other", "None yet"],
+  submitting: "Sending…",
+  consent: "By applying, you agree we can contact you about the pilot by email or phone.",
+  reviewHeading: "Check your answers",
+  edit: "Edit",
+};
+
+export const thanks = {
+  title: "Thanks for applying.",
+  body:
+    "We review every application ourselves and will reach out by email if your crew looks like a fit.",
+  callHeading: "Want to move faster?",
+  callBody: "Book a short intro call and we’ll walk through how Stringline would work for your crew.",
+  callCta: "Book an intro call",
+  callMissing: "Booking link not set. Add NEXT_PUBLIC_BOOKING_URL to show this button.",
+  home: "Back to the homepage",
 };
 
 export const faq = {
@@ -100,7 +123,7 @@ export const faq = {
     },
     {
       q: "How do I get into the pilot?",
-      a: "Apply above. We take on a small number of crews at a time, starting in Indiana, and review every application ourselves. Crews anywhere in the US can apply.",
+      a: "Fill out the short application. We take on a small number of crews at a time, starting in Indiana, and review every application ourselves. Crews anywhere in the US can apply.",
     },
   ],
 };

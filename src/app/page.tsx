@@ -1,32 +1,15 @@
-import { Join } from "@/components/Join";
-import { Mark } from "@/components/Mark";
+import Link from "next/link";
+import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
 import { BriefVisual, CalendarVisual, ThreadVisual } from "@/components/StepVisuals";
 import { YardReveal } from "@/components/YardReveal";
-import { about, faq, footer, hero, moment, nav, pricing, steps } from "@/content";
+import { about, applyCta, faq, hero, moment, pricing, steps } from "@/content";
 
 const VISUALS = [ThreadVisual, CalendarVisual, BriefVisual];
 
 export default function Home() {
   return (
     <>
-      <header className="nav">
-        <a href="#top" className="wordmark">
-          <Mark size={30} />
-          Stringline
-        </a>
-        <nav aria-label="Main">
-          <ul className="nav__links">
-            {nav.links.map((l) => (
-              <li key={l.href}>
-                <a href={l.href}>{l.label}</a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <a className="btn btn--small" href="#join">
-          {nav.cta}
-        </a>
-      </header>
+      <SiteHeader />
 
       <main id="top">
         <section className="hero" aria-labelledby="hero-title">
@@ -37,9 +20,9 @@ export default function Home() {
             <div className="hero__side">
               <p>{hero.lede}</p>
               <div className="hero__actions">
-                <a className="btn" href="#join">
+                <Link className="btn" href="/apply">
                   {hero.cta}
-                </a>
+                </Link>
                 <span className="hero__note">{hero.note}</span>
               </div>
             </div>
@@ -98,7 +81,20 @@ export default function Home() {
           </p>
         </section>
 
-        <Join />
+        <section className="join" id="join" aria-labelledby="join-title">
+          <div className="join__intro">
+            <h2 id="join-title" className="h2">
+              {applyCta.heading}
+            </h2>
+            <p>{applyCta.lede}</p>
+          </div>
+          <div className="join__action">
+            <Link className="btn btn--big" href="/apply">
+              {applyCta.cta}
+            </Link>
+            <p className="muted">{applyCta.note}</p>
+          </div>
+        </section>
 
         <section className="faq" id="faq" aria-labelledby="faq-title">
           <h2 id="faq-title" className="h2">
@@ -120,16 +116,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="footer">
-        <p className="footer__name">
-          <Mark size={120} />
-          Stringline
-        </p>
-        <div className="footer__base">
-          <span>{footer.copyright}</span>
-          <span>{footer.line}</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }
