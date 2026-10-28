@@ -1,10 +1,10 @@
 import "server-only";
 import type { ContactMessage } from "./contact";
 import { deliver, emailEnabled, notifyAidan } from "./email";
-import { insertRow, storageEnabled } from "./supabase";
+import { insertRow, storageEnabled } from "./db";
 
 // Emails the message to Aidan (reply-to set to the sender, so he answers from his inbox)
-// and keeps a copy in Supabase, whichever of the two are configured.
+// and keeps a copy in the database, whichever of the two are configured.
 export async function sendContactMessage(message: ContactMessage): Promise<{ id: string }> {
   const id = crypto.randomUUID();
   const receivedAt = new Date().toISOString();

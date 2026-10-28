@@ -27,7 +27,7 @@ export async function notifyAidan(subject: string, text: string, replyTo?: strin
 export async function deliver(label: string, record: unknown, jobs: (() => Promise<void>)[]): Promise<void> {
   if (jobs.length === 0) {
     const log = process.env.NODE_ENV === "production" ? console.error : console.log;
-    log(`[${label}:not-wired] Set the Supabase or Resend env vars to deliver this.`, JSON.stringify(record));
+    log(`[${label}:not-wired] Set DATABASE_URL or the Resend env vars to deliver this.`, JSON.stringify(record));
     return;
   }
   const results = await Promise.allSettled(jobs.map((job) => job()));

@@ -1,5 +1,4 @@
--- Stringline site tables. Paste into the Supabase SQL editor and run once.
--- Row level security is on with no policies, so only the server (secret key) can read or write.
+-- Stringline site tables. Paste into the Neon SQL Editor and run once (safe to run again).
 
 create table if not exists public.applications (
   id uuid primary key,
@@ -35,6 +34,3 @@ create table if not exists public.contact_messages (
   company text,
   message text not null
 );
-
-alter table public.applications enable row level security;
-alter table public.contact_messages enable row level security;

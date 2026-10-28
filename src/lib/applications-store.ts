@@ -1,7 +1,7 @@
 import "server-only";
 import type { Application } from "./application";
 import { deliver, emailEnabled, notifyAidan } from "./email";
-import { insertRow, storageEnabled } from "./supabase";
+import { insertRow, storageEnabled } from "./db";
 
 export type StoredApplication = Application & {
   id: string;
@@ -9,7 +9,7 @@ export type StoredApplication = Application & {
   source: string;
 };
 
-// Saves the application to Supabase and emails Aidan, whichever of the two are configured.
+// Saves the application to the database and emails Aidan, whichever of the two are configured.
 // The submit action already validates and normalizes the data before calling this.
 export async function saveApplication(app: Application, source = "website"): Promise<StoredApplication> {
   const stored: StoredApplication = {

@@ -39,7 +39,7 @@ The full chain in one flow, billed per result: instant answer, qualification, re
 - The assistant discloses call recording and never claims to be human.
 - Texting compliance: carrier registration, consent for revival contacts, instant STOP opt-out, quiet hours 8am–9pm local.
 - Pricing model: one-time setup fee plus a charge per billable consult, charged weekly after each dispute window. Dollar amounts are undecided; pilot terms are set per crew.
-- Undecided: waitlist storage (Supabase, a form service or a sheet), domain, hosting setup (the user handles Vercel manually).
+- Submissions: applications and contact messages go to a Neon Postgres database and are emailed to Aidan through Resend. Undecided: domain. The user handles Vercel manually.
 
 ## Brand Commitments
 
