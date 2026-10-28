@@ -1,15 +1,42 @@
 import "server-only";
 import type { ContactMessage } from "./contact";
+import { deliver, emailEnabled, notifyAidan } from "./email";
+import { insertRow, storageEnabled } from "./supabase";
 
-// Where contact messages go. Not wired yet: this only logs to the server console.
-//
-// To wire it, send an email to Aidan with a transactional email service (e.g. Resend) and keep the signature:
-//   - to: process.env.CONTACT_TO_EMAIL (Aidan's address; never sent to the browser)
-//   - from: a sending address on the Stringline domain once it exists
-//   - reply-to: message.email, so Aidan can answer straight from his inbox
+// Emails the message to Aidan (reply-to set to the sender, so he answers from his inbox)
+// and keeps a copy in Supabase, whichever of the two are configured.
 export async function sendContactMessage(message: ContactMessage): Promise<{ id: string }> {
   const id = crypto.randomUUID();
-  const to = process.env.CONTACT_TO_EMAIL || "(CONTACT_TO_EMAIL not set)";
-  console.log("[contact:not-wired]", JSON.stringify({ id, to, receivedAt: new Date().toISOString(), ...message }));
+  const receivedAt = new Date().toISOString();
+  const jobs: (() => Promise<void>)[] = [];
+  if (storageEnabled) {
+    jobs.push(() =>
+      insertRow("contact_messages", {
+        id,
+        received_at: receivedAt,
+        name: message.name,
+        email: message.email,
+        phone: message.phone || null,
+        company: message.company || null,
+        message: message.message,
+      }),
+    );
+  }
+  if (emailEnabled) {
+    const text = [
+      message.message,
+      "",
+      "—",
+      `${message.name}${message.company ? `, ${message.company}` : ""}`,
+      message.email,
+      message.phone,
+      "",
+      `Sent from the Stringline contact form · ${receivedAt}`,
+    ]
+      .filter((l, i, all) => l !== "" || all[i - 1] !== "")
+      .join("\n");
+    jobs.push(() => notifyAidan(`Message from ${message.name}${message.company ? ` (${message.company})` : ""}`, text, message.email));
+  }
+  await deliver("contact", { id, receivedAt, ...message }, jobs);
   return { id };
 }

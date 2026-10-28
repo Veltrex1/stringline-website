@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stringline site
 
-## Getting Started
-
-First, run the development server:
+The marketing site and pilot application for Stringline. Next.js 16 (App Router), deployed on Vercel.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Copy `.env.example` to `.env.local` to test with real services. With no env vars set, the site runs normally and form submissions are only written to the server log.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where submissions go
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Applications** (`/apply`) are saved to the Supabase `applications` table and emailed to Aidan.
+- **Contact messages** (`/contact`) are emailed to Aidan with reply-to set to the sender, and copied to `contact_messages`.
 
-## Learn More
+Each submission succeeds if at least one configured delivery works. Failures are logged with the full submission, prefixed `[application:` or `[contact:`, so nothing is lost.
 
-To learn more about Next.js, take a look at the following resources:
+## Setup checklist
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Supabase.** Create a project, open the SQL editor, and run `supabase/schema.sql`. From Project Settings → API Keys, copy the project URL and a secret key into `SUPABASE_URL` and `SUPABASE_SECRET_KEY`. Never use the secret key in browser code.
+2. **Resend.** Create an account with the email Aidan wants alerts at, create an API key, and set `RESEND_API_KEY` and `NOTIFY_EMAIL`. Once the domain exists, verify it in Resend and set `EMAIL_FROM`.
+3. **Booking link.** Make a 15–20 minute intro-call link (Cal.com, Calendly or Google appointment page) and set `NEXT_PUBLIC_BOOKING_URL`.
+4. **Vercel.** Import the GitHub repo, add the env vars above for Production and Preview, and redeploy. Turn on Analytics in the project's Analytics tab.
+5. **Domain.** Add it under Settings → Domains, set `NEXT_PUBLIC_SITE_URL`, and redeploy.
+6. **Test.** Submit one application and one contact message on the live site and check both the table and the inbox.

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Schibsted_Grotesk } from "next/font/google";
+import Script from "next/script";
 import { RevealRoot } from "@/components/Reveal";
 import { siteUrl } from "@/config/site";
 import "./globals.css";
@@ -43,6 +44,8 @@ export default function RootLayout({
       <body>
         <RevealRoot />
         {children}
+        {/* Vercel Web Analytics: only served on Vercel, and only counts once it is enabled in the project. */}
+        {process.env.VERCEL && <Script src="/_vercel/insights/script.js" strategy="afterInteractive" />}
       </body>
     </html>
   );
